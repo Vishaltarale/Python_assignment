@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 api_id="a3153f5e98fbc06dcc1b06263139f5c3"       
 weather_data=[]
+
 #Taken citys as a list as given in Question
 list=["new york","london","tokyo"]
 for i in list:
@@ -22,14 +23,19 @@ for i in list:
     df = pd.DataFrame(weather_data,columns=['city','temperature','humididty','weather'])
     
 #Question 4 : To find Hotest and Coldest City.
-print("Hotest City :",df.loc[df["temperature"].idxmax()])
-print("Coldest City :",df.loc[df["temperature"].idxmin()])
+hottest_city = df.loc[df["temperature"].idxmax()]
+coldest_city = df.loc[df["temperature"].idxmin()]
 
 #Question 3 : To make barchart using the DataFrame Column Data.
 df.plot(x="city", y="temperature", kind="bar", legend=False,grid=True, color="skyblue")
 plt.ylabel("temperature")
 plt.title("Temperature Comparison of Cities")
 plt.xticks(rotation=0)
+
+plt.text(hottest_city.name, hottest_city.temperature, "Hottest", ha='center', color="red", fontsize=12)
+plt.text(coldest_city.name, coldest_city.temperature, "Coldest", ha='center', color="blue", fontsize=12)
+
 plt.show()
+
 
 
