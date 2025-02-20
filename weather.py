@@ -31,7 +31,6 @@ df.plot(x="city", y="temperature", kind="bar", legend=False,grid=True, color="sk
 plt.ylabel("temperature")
 plt.title("Temperature Comparison of Cities")
 plt.xticks(rotation=0)
-
 plt.text(hottest_city.name, hottest_city.temperature, "Hottest", ha='center', color="red", fontsize=12)
 plt.text(coldest_city.name, coldest_city.temperature, "Coldest", ha='center', color="blue", fontsize=12)
 
