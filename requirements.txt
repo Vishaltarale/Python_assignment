@@ -1,2 +1,2 @@
 #first requirements is that:
-1.install pandas library by command pip install pandas
+1.install pandas library using command pip install pandas
